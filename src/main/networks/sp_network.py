@@ -16,7 +16,7 @@ class SPNetwork:
 
     def decrypt(self, ciphertext, key):
         value = ciphertext.copy()
-        for i in range(self.num_rounds - 1, -1, -1):
+        for i in range(self.num_rounds):
             left, right = np.split(value, 2)
             value = np.concatenate((right, left))
             value = self.inv_round_function(value, key[i])
