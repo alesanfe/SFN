@@ -13,6 +13,9 @@ class SPNetworkSFN(SPNetwork):
     def round_function(self, value, constant):
         self.substitution(self.mix_rows(self.mix_columns(self.substitution(self.add_constant(value, constant)))))
 
+    def inv_round_function(self, value, constant):
+        self.substitution(self.mix_rows(self.mix_columns(self.substitution(self.add_constant(value, constant)))))
+
     def add_constant(self, value, constant):
         return np.bitwise_xor(value, constant)
 

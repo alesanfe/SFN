@@ -8,7 +8,9 @@ class SPNetwork:
         value = plaintext.copy()
         for i in range(self.num_rounds):
             left, right = np.split(value, 2)
+            print(value)
             value = np.concatenate((right, left))
+            print(value)
             value = self.round_function(value, key[i])
         return value
 
@@ -17,8 +19,11 @@ class SPNetwork:
         for i in range(self.num_rounds - 1, -1, -1):
             left, right = np.split(value, 2)
             value = np.concatenate((right, left))
-            value = self.round_function(value, key[i])
+            value = self.inv_round_function(value, key[i])
         return value
 
     def round_function(self, value, constant):
+        pass
+
+    def inv_round_function(self, value, constant):
         pass
