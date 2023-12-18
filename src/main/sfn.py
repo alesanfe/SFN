@@ -87,5 +87,5 @@ class SFN:
 
         else:
             sp = SPNetwork(1, self.substitution_box2, self.m)
-            rk = rk.encrypt(rk, i)
+            rk = sp.encrypt(rk, i)
         return rk
