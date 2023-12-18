@@ -6,8 +6,7 @@ from src.main.networks.sp_network import SPNetwork
 
 class SFN:
 
-    def __init__(self,num_rounds, substitution_box1, substitution_box2, permutation_box, xor_box, m):
-        self.num_rounds = num_rounds
+    def __init__(self, substitution_box1, substitution_box2, permutation_box, xor_box, m):
         self.substitution_box1 = substitution_box1
         self.substitution_box2 = substitution_box2
         self.permutation_box = permutation_box
